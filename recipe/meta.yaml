@@ -12,8 +12,8 @@ source:
     - conda.patch
 
 build:
-  number: 2
-  skip: true  # [not linux]
+  number: 3
+  skip: true  # [win]
 
 requirements:
   build:
