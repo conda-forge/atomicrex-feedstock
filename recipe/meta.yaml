@@ -1,5 +1,5 @@
 {% set name = "atomicrex" %}
-{% set version = "1.0" %}
+{% set version = "1.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://gitlab.com/{{ name }}/{{ name }}/-/archive/{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f90d7a46987a363c2d14d693e7ac1d0e966b8a0a852aafe3254b30f006ea6555
+  sha256: 1bdbd2feec165b06327bc6c226ff9e3281ad313877d11dd2754e7dc8a41045ad
   patches:
     - conda.patch
 
