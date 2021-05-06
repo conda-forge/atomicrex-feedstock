@@ -12,7 +12,7 @@ source:
     - conda.patch
 
 build:
-  number: 2
+  number: 3
   skip: true  # [not linux]
 
 requirements:
@@ -59,3 +59,4 @@ about:
 extra:
   recipe-maintainers:
     - jan-janssen
+    - erhart1
