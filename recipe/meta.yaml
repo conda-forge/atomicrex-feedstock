@@ -1,5 +1,5 @@
 {% set name = "atomicrex" %}
-{% set version = "1.0.1" %}
+{% set version = "1.0.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://gitlab.com/{{ name }}/{{ name }}/-/archive/{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 1bdbd2feec165b06327bc6c226ff9e3281ad313877d11dd2754e7dc8a41045ad
+  sha256: 3515b409a743216230f10685948867c9261fc247c2f6cc868865dd3722842ef7
   patches:
     - conda.patch
 
 build:
-  number: 3
+  number: 0
   skip: true  # [not linux]
 
 requirements:
@@ -20,7 +20,7 @@ requirements:
     - {{ compiler('cxx') }}
     - {{ compiler('fortran') }}
     - make
-    - cmake 
+    - cmake
     - vim  # required for xxd 
   host:
     - python
@@ -45,7 +45,7 @@ about:
   license: GPL-3.0
   license_family: GPL
   license_file: LICENSE.txt
-  summary: 'A tool for the construction of interaction models'
+  summary: A tool for the construction of interaction models
 
   description: |
     atomicrex is a versatile tool for the construction of advanced 
