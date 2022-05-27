@@ -1,18 +1,18 @@
 {% set name = "atomicrex" %}
-{% set version = "1.0.2" %}
+{% set version = "1.0.3" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://gitlab.com/{{ name }}/{{ name }}/-/archive/{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 3515b409a743216230f10685948867c9261fc247c2f6cc868865dd3722842ef7
+  url: https://gitlab.com/{{ name }}/{{ name }}/-/archive/v{{ version }}/{{ name }}-v{{ version }}.tar.gz
+  sha256: 9c3381e77ddbe2fc4ad84b1750b1c02009efde41ad53022a058dd97c9e74ecfe
   patches:
     - conda.patch
 
 build:
-  number: 1
+  number: 0
   skip: true  # [not linux]
 
 requirements:
@@ -60,3 +60,4 @@ extra:
   recipe-maintainers:
     - jan-janssen
     - erhart1
+    - srmnitc
