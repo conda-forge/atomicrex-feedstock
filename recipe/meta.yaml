@@ -6,11 +6,10 @@ package:
   version: {{ version }}
 
 source:
-  url: https://gitlab.com/{{ name }}/{{ name }}/-/archive/v{{ version }}/{{ name }}-v{{ version }}.tar.gz
+  url: https://gitlab.com/atomicrex/atomicrex/-/archive/master/atomicrex-master.tar.gz
   sha256: 9c3381e77ddbe2fc4ad84b1750b1c02009efde41ad53022a058dd97c9e74ecfe
   patches:
     - conda.patch
-    - pybind.patch
 
 build:
   number: 3
