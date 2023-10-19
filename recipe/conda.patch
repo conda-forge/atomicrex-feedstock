@@ -1,34 +1,19 @@
-Remove python version set command
-author: Jan Janssen (MPIE)
+From b82623af160288e9ea3e263eec9474ffbb965caa Mon Sep 17 00:00:00 2001
+From: Jan Janssen <janssen@mpie.de>
+Date: Thu, 19 Oct 2023 16:29:05 +0200
+Subject: [PATCH] fixes for conda package
 
 ---
- CMakeLists.txt | 1 +-
- 1 file changed, 0 insertion(+), 1 deletion(-)
-
-diff --git a/src/3rdparty/pybind11/tools/pybind11Tools.cmake b/src/3rdparty/pybind11/tools/pybind11Tools.cmake
-index 2e6ad9a..25556d0 100644
---- a/src/3rdparty/pybind11/tools/pybind11Tools.cmake
-+++ b/src/3rdparty/pybind11/tools/pybind11Tools.cmake
-@@ -12,7 +12,6 @@
-   set(PYBIND11_PYTHON_VERSION "" CACHE STRING "Python version to use for compiling modules")
- endif()
- 
--set(Python_ADDITIONAL_VERSIONS 3.7 3.6 3.5 3.4)
- find_package(PythonLibsNew ${PYBIND11_PYTHON_VERSION} REQUIRED)
- 
- include(CheckCXXCompilerFlag)
-Enforce real time
-author: Jan Janssen (MPIE)
-
----
- CMakeLists.txt | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ cmake/Testing.cmake        | 2 +-
+ src/arexlib/CMakeLists.txt | 3 ---
+ src/python/CMakeLists.txt  | 2 +-
+ 3 files changed, 2 insertions(+), 5 deletions(-)
 
 diff --git a/cmake/Testing.cmake b/cmake/Testing.cmake
-index 2e6ad9a..25556d0 100644
+index 539f2f5..145909b 100644
 --- a/cmake/Testing.cmake
 +++ b/cmake/Testing.cmake
-@@ -58,7 +58,7 @@
+@@ -58,7 +58,7 @@ FOREACH(UNIT_TEST ${UNIT_TESTS})
  	add_executable("${testname}" "${UNIT_TEST}")
  	# indicates the include paths
  	target_include_directories("${testname}" PRIVATE ${BOOST_INCLUDE_DIRS})
@@ -37,38 +22,6 @@ index 2e6ad9a..25556d0 100644
  	# Compile with symbols hidden by default. This is needed because the atomicrex lib is compiled in the same way.
  	SET_TARGET_PROPERTIES("${testname}" PROPERTIES CXX_VISIBILITY_PRESET "hidden")
  	add_test(NAME "${UNIT_TEST}" 
-From 5cd8bef9c0766c3f0ca80e150b20e37394d5c5dc Mon Sep 17 00:00:00 2001
-From: Jan Janssen <jan-janssen@users.noreply.github.com>
-Date: Thu, 19 Oct 2023 16:02:57 +0200
-Subject: [PATCH] Update CMakeLists.txt
-
----
- src/python/CMakeLists.txt | 2 +-
- 1 file changed, 1 insertion(+), 1 deletions(-)
-
-diff --git a/src/python/CMakeLists.txt b/src/python/CMakeLists.txt
-index 198eaef..bf2529f 100644
---- a/src/python/CMakeLists.txt
-+++ b/src/python/CMakeLists.txt
-@@ -24,9 +24,6 @@ IF(NOT ENABLE_PYTHON_INTERFACE)
-     RETURN()
- ENDIF()
- 
-# This library depends on pybind11 framework.
--ADD_SUBDIRECTORY("../3rdparty/pybind11" pybind11)
-+find_package(pybind11)
-
- # List of source files that need to be compiled:
- SET(SourceFiles
-From 3abe3c39f8a0c88b409b9872c9f1f008fcfc92a7 Mon Sep 17 00:00:00 2001
-From: Jan Janssen <jan-janssen@users.noreply.github.com>
-Date: Thu, 19 Oct 2023 16:05:44 +0200
-Subject: [PATCH] Update CMakeLists.txt
-
----
- src/arexlib/CMakeLists.txt | 3 ---
- 1 file changed, 3 deletions(-)
-
 diff --git a/src/arexlib/CMakeLists.txt b/src/arexlib/CMakeLists.txt
 index 67c17eb..056c868 100755
 --- a/src/arexlib/CMakeLists.txt
@@ -83,3 +36,16 @@ index 67c17eb..056c868 100755
  # Honor visibility properties for all target types.
  CMAKE_POLICY(SET CMP0063 NEW)   
  
+diff --git a/src/python/CMakeLists.txt b/src/python/CMakeLists.txt
+index 198eaef..5a64518 100644
+--- a/src/python/CMakeLists.txt
++++ b/src/python/CMakeLists.txt
+@@ -25,7 +25,7 @@ IF(NOT ENABLE_PYTHON_INTERFACE)
+ ENDIF()
+ 
+ # This library depends on pybind11 framework.
+-ADD_SUBDIRECTORY("../3rdparty/pybind11" pybind11)
++find_package(pybind11)
+ 
+ # List of source files that need to be compiled:
+ SET(SourceFiles
