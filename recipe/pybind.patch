@@ -81,7 +81,7 @@ index ed273a1..573bb77 100644
  
 -		PYBIND11_TYPE_CASTER(atomicrex::Vector_3<T>, _("Vector3<") + make_caster<T>::name() + _(">"));
 -    };	
-+    PYBIND11_TYPE_CASTER(atomicrex::Vector_3<T>, _("Vector3<") + make_caster<T>::name() + _(">"));
++    PYBIND11_TYPE_CASTER(atomicrex::Vector_3<T>, _("Vector3<") + make_caster<T>::name + _(">"));
 +};
  
 -	/// Automatic Python <--> Point3 conversion
