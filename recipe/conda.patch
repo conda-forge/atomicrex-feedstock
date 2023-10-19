@@ -37,3 +37,49 @@ index 2e6ad9a..25556d0 100644
  	# Compile with symbols hidden by default. This is needed because the atomicrex lib is compiled in the same way.
  	SET_TARGET_PROPERTIES("${testname}" PROPERTIES CXX_VISIBILITY_PRESET "hidden")
  	add_test(NAME "${UNIT_TEST}" 
+From 5cd8bef9c0766c3f0ca80e150b20e37394d5c5dc Mon Sep 17 00:00:00 2001
+From: Jan Janssen <jan-janssen@users.noreply.github.com>
+Date: Thu, 19 Oct 2023 16:02:57 +0200
+Subject: [PATCH] Update CMakeLists.txt
+
+---
+ src/python/CMakeLists.txt | 3 ---
+ 1 file changed, 3 deletions(-)
+
+diff --git a/src/python/CMakeLists.txt b/src/python/CMakeLists.txt
+index 198eaef..bf2529f 100644
+--- a/src/python/CMakeLists.txt
++++ b/src/python/CMakeLists.txt
+@@ -24,9 +24,6 @@ IF(NOT ENABLE_PYTHON_INTERFACE)
+     RETURN()
+ ENDIF()
+ 
+-# This library depends on pybind11 framework.
+-ADD_SUBDIRECTORY("../3rdparty/pybind11" pybind11)
+-
+ # List of source files that need to be compiled:
+ SET(SourceFiles
+ 	PythonBinding.cpp
+From 3abe3c39f8a0c88b409b9872c9f1f008fcfc92a7 Mon Sep 17 00:00:00 2001
+From: Jan Janssen <jan-janssen@users.noreply.github.com>
+Date: Thu, 19 Oct 2023 16:05:44 +0200
+Subject: [PATCH] Update CMakeLists.txt
+
+---
+ src/arexlib/CMakeLists.txt | 3 ---
+ 1 file changed, 3 deletions(-)
+
+diff --git a/src/arexlib/CMakeLists.txt b/src/arexlib/CMakeLists.txt
+index 67c17eb..056c868 100755
+--- a/src/arexlib/CMakeLists.txt
++++ b/src/arexlib/CMakeLists.txt
+@@ -19,9 +19,6 @@
+ #
+ ###############################################################################
+ 
+-# Build the required third-party libraries.
+-ADD_SUBDIRECTORY(../3rdparty/muparser muparser)
+-
+ # Honor visibility properties for all target types.
+ CMAKE_POLICY(SET CMP0063 NEW)   
+ 
