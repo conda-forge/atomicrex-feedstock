@@ -5,7 +5,7 @@ Subject: [PATCH] fixes for conda package
 
 ---
  cmake/Testing.cmake        | 2 +-
- src/arexlib/CMakeLists.txt | 5 +----
+ src/arexlib/CMakeLists.txt | 4 ++---
  src/python/CMakeLists.txt  | 2 +-
  3 files changed, 3 insertions(+), 6 deletions(-)
 
@@ -26,13 +26,13 @@ diff --git a/src/arexlib/CMakeLists.txt b/src/arexlib/CMakeLists.txt
 index 67c17eb..056c868 100755
 --- a/src/arexlib/CMakeLists.txt
 +++ b/src/arexlib/CMakeLists.txt
-@@ -19,9 +19,6 @@
- #
+@@ -19,9 +19,6 @@ #
  ###############################################################################
  
--# Build the required third-party libraries.
+# Build the required third-party libraries.
 -ADD_SUBDIRECTORY(../3rdparty/muparser muparser)
--
++find_package(muparser)
+
  # Honor visibility properties for all target types.
  CMAKE_POLICY(SET CMP0063 NEW)   
 
