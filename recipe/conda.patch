@@ -5,9 +5,9 @@ Subject: [PATCH] fixes for conda package
 
 ---
  cmake/Testing.cmake        | 2 +-
- src/arexlib/CMakeLists.txt | 3 ---
+ src/arexlib/CMakeLists.txt | 5 +----
  src/python/CMakeLists.txt  | 2 +-
- 3 files changed, 2 insertions(+), 5 deletions(-)
+ 3 files changed, 3 insertions(+), 6 deletions(-)
 
 diff --git a/cmake/Testing.cmake b/cmake/Testing.cmake
 index 539f2f5..145909b 100644
@@ -35,7 +35,16 @@ index 67c17eb..056c868 100755
 -
  # Honor visibility properties for all target types.
  CMAKE_POLICY(SET CMP0063 NEW)   
+
+ @@ -105,7 +105,7 @@ TARGET_LINK_LIBRARIES(atomicrexlib PRIVATE ${LIBXML2_LIBRARIES})
+ TARGET_INCLUDE_DIRECTORIES(atomicrexlib PUBLIC ${LIBXML2_INCLUDE_DIR})
  
+ # Link to muParser library.
+-TARGET_LINK_LIBRARIES(atomicrexlib PUBLIC muParser)
++TARGET_LINK_LIBRARIES(atomicrexlib PUBLIC muparser)
+ 
+ # Link to NLopt library.
+ IF(ENABLE_NLOPT)
 diff --git a/src/python/CMakeLists.txt b/src/python/CMakeLists.txt
 index 198eaef..5a64518 100644
 --- a/src/python/CMakeLists.txt
