@@ -43,8 +43,8 @@ Date: Thu, 19 Oct 2023 16:02:57 +0200
 Subject: [PATCH] Update CMakeLists.txt
 
 ---
- src/python/CMakeLists.txt | 3 ---
- 1 file changed, 3 deletions(-)
+ src/python/CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletions(-)
 
 diff --git a/src/python/CMakeLists.txt b/src/python/CMakeLists.txt
 index 198eaef..bf2529f 100644
@@ -54,12 +54,12 @@ index 198eaef..bf2529f 100644
      RETURN()
  ENDIF()
  
--# This library depends on pybind11 framework.
+# This library depends on pybind11 framework.
 -ADD_SUBDIRECTORY("../3rdparty/pybind11" pybind11)
--
++find_package(pybind11)
+
  # List of source files that need to be compiled:
  SET(SourceFiles
- 	PythonBinding.cpp
 From 3abe3c39f8a0c88b409b9872c9f1f008fcfc92a7 Mon Sep 17 00:00:00 2001
 From: Jan Janssen <jan-janssen@users.noreply.github.com>
 Date: Thu, 19 Oct 2023 16:05:44 +0200
