@@ -20,6 +20,8 @@ requirements:
   build:
     - {{ compiler('cxx') }}
     - {{ compiler('fortran') }}
+    - llvm-openmp  # [osx]
+    - libgomp      # [linux]
     - make
     - cmake
     - vim  # required for xxd 
