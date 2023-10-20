@@ -13,8 +13,8 @@ source:
     - pybind.patch
 
 build:
-  number: 5
-  skip: true  # [not linux]
+  number: 6
+  skip: true  # [win]
 
 requirements:
   build:
