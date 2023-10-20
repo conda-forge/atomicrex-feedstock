@@ -13,7 +13,7 @@ source:
     - pybind.patch
 
 build:
-  number: 4
+  number: 5
   skip: true  # [not linux]
 
 requirements:
@@ -25,14 +25,13 @@ requirements:
     - vim  # required for xxd 
   host:
     - python
-    - boost-cpp
+    - libboost-devel
     - libxml2
     - muparser
     - nlopt
     - pybind11
   run:
     - python
-    - boost-cpp
     - libxml2
     - muparser
     - nlopt
