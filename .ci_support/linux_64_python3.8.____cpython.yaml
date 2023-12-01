@@ -17,7 +17,7 @@ fortran_compiler_version:
 libboost_devel:
 - '1.82'
 libxml2:
-- '2.11'
+- '2.12'
 nlopt:
 - '2.7'
 pin_run_as_build:
