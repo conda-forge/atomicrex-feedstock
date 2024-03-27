@@ -13,13 +13,14 @@ source:
     - pybind.patch
 
 build:
-  number: 7
+  number: 8
   skip: true  # [not linux]
 
 requirements:
   build:
     - {{ compiler('cxx') }}
     - {{ compiler('fortran') }}
+    - {{ stdlib("c") }}
     - make
     - cmake
     - vim  # required for xxd 
