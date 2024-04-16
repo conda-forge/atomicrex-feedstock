@@ -10,7 +10,6 @@ source:
   sha256: 2b0a074e20cfb4bbb31a2d2e70707fee6874592a5cdf15af0cec9866f97c4101
   patches:
     - conda.patch
-    - pybind.patch
 
 build:
   number: 0
