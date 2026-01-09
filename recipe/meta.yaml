@@ -12,7 +12,7 @@ source:
     - conda.patch
 
 build:
-  number: 5
+  number: 6
   skip: true  # [not linux]
 
 requirements:
@@ -26,13 +26,13 @@ requirements:
   host:
     - python
     - libboost-devel
-    - libxml2
+    - libxml2-devel
     - muparser
     - nlopt
     - pybind11
   run:
     - python
-    - libxml2
+    - libxml2-devel
     - muparser
     - nlopt
 
