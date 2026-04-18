@@ -26,7 +26,7 @@ requirements:
   host:
     - python
     - libboost-devel
-    - libxml2
+    - libxml2-devel
     - muparser
     - nlopt
     - pybind11
