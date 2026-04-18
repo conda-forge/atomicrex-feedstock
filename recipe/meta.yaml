@@ -21,7 +21,7 @@ requirements:
     - {{ compiler('fortran') }}
     - {{ stdlib("c") }}
     - make
-    - cmake
+    - cmake <4
     - vim  # required for xxd 
   host:
     - python
