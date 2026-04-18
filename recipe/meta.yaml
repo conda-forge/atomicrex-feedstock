@@ -12,7 +12,7 @@ source:
     - conda.patch
 
 build:
-  number: 5
+  number: 6
   skip: true  # [not linux]
 
 requirements:
@@ -21,12 +21,12 @@ requirements:
     - {{ compiler('fortran') }}
     - {{ stdlib("c") }}
     - make
-    - cmake
+    - cmake <4
     - vim  # required for xxd 
   host:
     - python
     - libboost-devel
-    - libxml2
+    - libxml2-devel
     - muparser
     - nlopt
     - pybind11
