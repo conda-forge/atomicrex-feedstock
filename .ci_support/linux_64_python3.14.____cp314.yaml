@@ -17,7 +17,7 @@ fortran_compiler:
 fortran_compiler_version:
 - '14'
 libboost_devel:
-- '1.88'
+- '1.90'
 libxml2_devel:
 - '2.14'
 nlopt:
